@@ -1,5 +1,7 @@
 import * as logos from "@/assets/logos";
 
+import { QueryFunctionContext } from "@tanstack/react-query";
+
 export async function getTopProducts() {
   // Fake delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -72,7 +74,13 @@ export async function getInvoiceTableData() {
   ];
 }
 
-export async function getFoodList() {
+export async function getFoodList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
   // Fake delay
   //await new Promise((resolve) => setTimeout(resolve, 1500));
 

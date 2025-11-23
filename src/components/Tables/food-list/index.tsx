@@ -1,3 +1,4 @@
+"use client";
 import {
   Table,
   TableBody,
@@ -6,16 +7,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { compactFormat, standardFormat } from "@/lib/format-number";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { getFoodList } from "../fetch";
+import { useQuery } from "@tanstack/react-query";
 
-export async function FoodList({ className }: { className?: string }) {
-  const data = await getFoodList();
-  console.log(data);
+export function FoodList({ className }: { className?: string }) {
+  const { data, isLoading } = useQuery({
+    queryKey: ["foods", ""], // search 없으면 undefined
+    queryFn: getFoodList,
+  });
 
-  if (!data) return <div>Loading...</div>;
+  if (isLoading || !data) return <div>Loading...</div>;
 
   return (
     <div

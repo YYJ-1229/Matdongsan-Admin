@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { FoodInfo } from "./_components/food-info";
 import { FoodDetail } from "./_components/food-detail";
 import { FoodNutrition } from "./_components/food-nutrition";
+import { Button } from "@/components/ui-elements/button";
+import { ModalTrigger } from "./_components/modalTrigger";
 
 export const metadata: Metadata = {
   title: "Seasonal Food",
@@ -15,7 +17,10 @@ export default function Page() {
       <Breadcrumb pageName="Write Seasonal Food" />
 
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
-        <div className="flex flex-col gap-9">
+        <div className="flex flex-col gap-3">
+          <div className="flex justify-end">
+            <ModalTrigger />
+          </div>
           <FoodInfo />
           <FoodNutrition />
         </div>
