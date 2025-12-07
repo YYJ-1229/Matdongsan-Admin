@@ -38,10 +38,16 @@ const InputGroup: React.FC<InputGroupProps> = ({
     <div className={className}>
       <label
         htmlFor={id}
-        className="text-body-sm font-medium text-dark dark:text-white"
+        className={
+          label === "NONE"
+            ? "block text-body-sm font-medium text-transparent"
+            : "text-body-sm font-medium text-dark dark:text-white"
+        }
       >
         {label}
-        {required && <span className="ml-1 select-none text-red">*</span>}
+        {required && label.length != 0 && (
+          <span className="ml-1 select-none text-red">*</span>
+        )}
       </label>
 
       <div
@@ -50,6 +56,7 @@ const InputGroup: React.FC<InputGroupProps> = ({
           props.iconPosition === "left"
             ? "[&_svg]:left-4.5"
             : "[&_svg]:right-4.5",
+          label.length === 0 && "mt-0",
         )}
       >
         <input

@@ -38,11 +38,11 @@ export const NAV_DATA = [
         items: [
           {
             title: "제철요리 관리",
-            url: "/contents/cooking-list",
+            url: "/contents/cooking/list",
           },
           {
             title: "제철요리 투표 관리 ",
-            url: "/contents/cooking-vote",
+            url: "/contents/cooking/vote",
           },
         ],
       },
@@ -62,15 +62,15 @@ export const NAV_DATA = [
         items: [
           {
             title: "회원 관리",
-            url: "/contents/price",
+            url: "/contents/platform/user",
           },
           {
             title: "메인 관리",
-            url: "/contents/vote",
+            url: "/contents/platform/main",
           },
           {
             title: "약관 관리",
-            url: "/contents/vote",
+            url: "/contents/platform/rule",
           },
         ],
       },

@@ -267,6 +267,71 @@ export async function getPriceList(
   ];
 }
 
+export async function getCookingList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      menu: "콘치즈",
+      name: "옥수수",
+      vote: "12",
+      status: "Y",
+      chgDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      menu: "콘치즈",
+      name: "옥수수",
+      vote: "12",
+      status: "Y",
+      chgDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+    },
+
+    {
+      seq: 1,
+      menu: "콘치즈",
+      name: "옥수수",
+      vote: "12",
+      status: "Y",
+      chgDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+    },
+
+    {
+      seq: 1,
+      menu: "콘치즈",
+      name: "옥수수",
+      vote: "12",
+      status: "Y",
+      chgDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+    },
+  ];
+}
+
 export async function getTopChannels() {
   // Fake delay
   await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -311,6 +376,138 @@ export async function getTopChannels() {
       sales: 3456,
       conversion: 2.59,
       logo: logos.facebook,
+    },
+  ];
+}
+
+export async function getUserList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+    {
+      seq: 1,
+      email: "yyyy@nnn.ccc",
+      name: "송예나",
+      contents: "1",
+      status: "활성화",
+      recDT: "2025-08-08 12:44:44",
+      regDT: "2025-08-08 12:44:44",
+      list: { date: "2025-08-08 12:44:44", content: "옥수수", user: "양유진" },
+    },
+  ];
+}
+
+export async function getReportList(
+  context: QueryFunctionContext<[string, string?]>,
+) {
+  const [, search] = context.queryKey; // queryKey에서 search 추출
+
+  const params = new URLSearchParams();
+  if (search) params.append("search", search);
+  // Fake delay
+  //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_API_URL}/api/v1/foods/100/info`,
+  //   {
+  //     method: "GET",
+  //   },
+  // );
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to fetch food review");
+  // }
+
+  //return res.json();
+
+  return [
+    {
+      seq: 1,
+      content: "이상함",
+      name: "송예나",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      content: "이상함",
+      name: "송예나",
+      regDT: "2025-08-08 12:44:44",
+    },
+    {
+      seq: 1,
+      content: "이상함",
+      name: "송예나",
+      regDT: "2025-08-08 12:44:44",
     },
   ];
 }
