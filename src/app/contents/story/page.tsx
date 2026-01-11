@@ -8,7 +8,7 @@ import InputGroup from "@/components/FormElements/InputGroup";
 import { Button } from "@/components/ui-elements/button";
 import { FoodListSkeleton } from "@/components/Tables/food-list/skeleton";
 import Link from "next/link";
-import { StoryList } from "./_components/StoryList";
+import { StoryList } from "./_components/storyList";
 
 export const metadata: Metadata = {
   title: "Seasonal Food",
