@@ -8,6 +8,7 @@ import InputGroup from "@/components/FormElements/InputGroup";
 import { Button } from "@/components/ui-elements/button";
 import { FoodListSkeleton } from "@/components/Tables/food-list/skeleton";
 import Link from "next/link";
+import { StoryList } from "./_components/storyList";
 
 export const metadata: Metadata = {
   title: "Seasonal Food",
@@ -110,7 +111,9 @@ export default function Page() {
         </div>
 
         <div className="col-span-12 grid xl:col-span-8">
-          <Suspense fallback={<FoodListSkeleton />}></Suspense>
+          <Suspense fallback={<FoodListSkeleton />}>
+            <StoryList />
+          </Suspense>
         </div>
       </div>
     </>
